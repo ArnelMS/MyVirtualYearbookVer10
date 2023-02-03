@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mivyb_ver10.databinding.ActivityMainBinding
 import com.example.mivyb_ver10.databinding.RowItemStudentsBinding
 
-class StudentAdapter(val studentModel: MutableList<Student>):RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
+class StudentAdapter(val students: MutableList<Student>):RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
 
     inner class StudentViewHolder(var binding: RowItemStudentsBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -18,14 +18,16 @@ class StudentAdapter(val studentModel: MutableList<Student>):RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.binding.apply {
-            tvFirstName.text = studentModel[position].firstName
-            tvFirstName.text = studentModel[position].firstName
-            tvMiddleName.text = studentModel[position].middleName
-            tvLastName.text = studentModel[position].lastName
-            tvMaidenName.text = studentModel[position].maidenName
-            tvMobile.text = studentModel[position].toString()
-            tvEmail.text = studentModel[position].email
-            tvFacebookURL2.text = studentModel[position].facebookURL
+            imgProfile.setImageResource(students[position].imageNew)
+            imgGradPic.setImageResource(students[position].imageOld)
+            tvFirstName.text = students[position].firstName
+            tvFirstName.text = students[position].firstName
+            tvMiddleName.text = students[position].middleName
+            tvLastName.text = students[position].lastName
+            tvMaidenName.text = students[position].maidenName
+            tvMobile.text = students[position].toString()
+            tvEmail.text = students[position].email
+            tvFacebookURL2.text = students[position].facebookURL
         return
 
 //            btnDelete.setOnClickListener() {
@@ -38,7 +40,7 @@ class StudentAdapter(val studentModel: MutableList<Student>):RecyclerView.Adapte
 
     }
     override fun getItemCount(): Int {
-        return studentModel.size
+        return students.size
     }
 
 }

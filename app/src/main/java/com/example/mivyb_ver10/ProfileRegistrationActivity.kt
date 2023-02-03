@@ -33,23 +33,35 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnAddProfile.setOnClickListener() {
-            dao.add(Student(
-                    1, 2,
-                    "Arnel",
-                    "Mendoza",
-                    "Sebastian",
-                    "n/a",
-                    123459,
-                    "user1@email.com",
-                    "www.facebook.com.Arnel"))
+            val imageNew = binding.imgProfileNew.toString()
+            val imageOld = binding.imgGradPic.toString()
+            val firstName = binding.etFirstName.text.toString()
+            val middleName = binding.etFirstName.text.toString()
+            val lastName = binding.etFirstName.text.toString()
+            val maidenName = binding.etFirstName.text.toString()
+            val mobile = binding.etFirstName.text.toString()
+            val email = binding.etFirstName.text.toString()
+            val facebookURL = binding.etFirstName.text.toString()
+
+            dao.add(
+                Student(
+                    imageNew.toInt(),
+                    imageOld.toInt(),
+                    firstName,
+                    middleName,
+                    lastName,
+                    maidenName,
+                    mobile.toLong(),
+                    email,
+                    facebookURL))
             Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
         }
 
-        binding.btnLoad.setOnClickListener() {
-                val intent = Intent(this, MyYearbook::class.java)
-                startActivity(intent)
-            view()
-        }
+//        binding.btnLoad.setOnClickListener() {
+//                val intent = Intent(this, MyYearbook::class.java)
+//                startActivity(intent)
+//            view()
+//        }
 
         binding.btnUpdate.setOnClickListener(){
             updateData()
@@ -162,50 +174,49 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         dao.update("-NNHtXcN04nN9t2s-oCm",mapData)
     }
 
-    private fun view() {
-        dao.get().addValueEventListener(object:ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                var students : ArrayList<Student> = ArrayList<Student>()
-
-                var dataFromDb = snapshot.children
-//                Toast.makeText(applicationContext, ""+dataFromDb, Toast.LENGTH_SHORT).show()
-
-                for(data in dataFromDb){
-                    var imageProfile = data.child("ProfilePhoto").value.toString()
-                    var imageOld = data.child("OldPhoto").value.toString()
-                    var firstName = data.child("FirstName").value.toString()
-                    var middleName = data.child("MiddleName").value.toString()
-                    var maidenName = data.child("MaidenName").value.toString()
-                    var lastName = data.child("LastName").value.toString()
-                    var mobile = data.child("Mobile").value.toString()
-                    var email = data.child("Email").value.toString()
-                    var facebookUrl = data.child("FacebookURL").value.toString()
-
-
-                    //get id of object from DB
-                    var id = data.key.toString()
-                    var student = Student(
-                        0,
-                        0,
-                        "firstName",
-                        "middleName",
-                        "Sebastian",
-                        "n/a",
-                        123456789,
-                        "user1@email.com",
-                        "arnelmsebastian")
-                    students.add(student)
-
-
-                    Toast.makeText(applicationContext, ""+id, Toast.LENGTH_SHORT).show()
-                    Toast.makeText(applicationContext, ""+student, Toast.LENGTH_SHORT).show()
-                }
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
-    }
+//    private fun view() {
+//        dao.get().addValueEventListener(object:ValueEventListener{
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                var students : ArrayList<Student> = ArrayList<Student>()
+//
+//                var dataFromDb = snapshot.children
+////                Toast.makeText(applicationContext, ""+dataFromDb, Toast.LENGTH_SHORT).show()
+//
+//                for(data in dataFromDb){
+//                    //get id of object from DB
+//                    var id = data.key.toString()
+//                    var imageProfile = data.child("ProfilePhoto").value.toString()
+//                    var imageOld = data.child("OldPhoto").value.toString()
+//                    var firstName = data.child("FirstName").value.toString()
+//                    var middleName = data.child("MiddleName").value.toString()
+//                    var maidenName = data.child("MaidenName").value.toString()
+//                    var lastName = data.child("LastName").value.toString()
+//                    var mobile = data.child("Mobile").value.toString()
+//                    var email = data.child("Email").value.toString()
+//                    var facebookUrl = data.child("FacebookURL").value.toString()
+//
+//                    var student = Student(
+//                        0,
+//                        0,
+//                        "firstName",
+//                        "middleName",
+//                        "Sebastian",
+//                        "n/a",
+//                        123456789,
+//                        "user1@email.com",
+//                        "arnelmsebastian")
+//                    students.add(student)
+//
+//
+//                    Toast.makeText(applicationContext, ""+id, Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(applicationContext, ""+student, Toast.LENGTH_SHORT).show()
+//                }
+//
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                TODO("Not yet implemented")
+//            }
+//        })
+//    }
 }
