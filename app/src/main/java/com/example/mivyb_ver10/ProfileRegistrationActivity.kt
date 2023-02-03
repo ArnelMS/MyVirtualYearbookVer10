@@ -30,15 +30,15 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnAddProfile.setOnClickListener() {
-            val imageNew = binding.imgProfileNew
-            val imageOld = binding.imgGradPic
+            val imageNew = ""
+            val imageOld = ""
             val firstName = binding.etFirstName.text.toString()
-            val middleName = binding.etFirstName.text.toString()
-            val lastName = binding.etFirstName.text.toString()
-            val maidenName = binding.etFirstName.text.toString()
-            val mobile = binding.etFirstName.text.toString()
-            val email = binding.etFirstName.text.toString()
-            val facebookURL = binding.etFirstName.text.toString()
+            val middleName = binding.etMiddleName.text.toString()
+            val lastName = binding.etLastName.text.toString()
+            val maidenName = binding.etMaidenName.text.toString()
+            val mobile = binding.etMobile.text.toString()
+            val email = binding.etEmail.text.toString()
+            val facebookURL = binding.etFacebookURL.text.toString()
 
             dao.add(
                 Student(
@@ -48,9 +48,10 @@ class ProfileRegistrationActivity : AppCompatActivity() {
                     middleName,
                     lastName,
                     maidenName,
-                    mobile.toLong(),
+                    mobile,
                     email,
-                    facebookURL))
+                    facebookURL)
+            )
             Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
         }
 
@@ -74,6 +75,12 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         }
         binding.btnAddGallery.setOnClickListener(){
             showGallery()
+        }
+
+        binding.btnLoad.setOnClickListener() {
+            val intent = Intent(this, MyYearbook::class.java)
+            finish()
+            startActivity(intent)
         }
 
     }
@@ -166,9 +173,9 @@ class ProfileRegistrationActivity : AppCompatActivity() {
     }
 
     private fun updateData() {
-        var mapData = mutableMapOf<String, String>()
-        mapData["firstName"] = "ARNEL"
-        dao.update("-NNHtXcN04nN9t2s-oCm",mapData)
+//        var mapData = mutableMapOf<String, String>()
+//        mapData["firstName"] = "ARNEL"
+//        dao.update(id,mapData)
     }
 
 //    private fun view() {

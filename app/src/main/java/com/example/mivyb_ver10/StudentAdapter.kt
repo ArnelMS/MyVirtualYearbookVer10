@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mivyb_ver10.databinding.ActivityMainBinding
 import com.example.mivyb_ver10.databinding.RowItemStudentsBinding
 
-class StudentAdapter(val students: MutableList<Student>):RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
+class StudentAdapter(val studentModel: MutableList<Student>):RecyclerView.Adapter<StudentAdapter.StudentViewHolder>(){
 
     inner class StudentViewHolder(var binding: RowItemStudentsBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -18,16 +18,20 @@ class StudentAdapter(val students: MutableList<Student>):RecyclerView.Adapter<St
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         holder.binding.apply {
-            imgProfile.setImageResource(students[position].imageNew)
-            imgGradPic.setImageResource(students[position].imageOld)
-            tvFirstName.text = students[position].firstName
-            tvFirstName.text = students[position].firstName
-            tvMiddleName.text = students[position].middleName
-            tvLastName.text = students[position].lastName
-            tvMaidenName.text = students[position].maidenName
-            tvMobile.text = students[position].toString()
-            tvEmail.text = students[position].email
-            tvFacebookURL2.text = students[position].facebookURL
+             if(studentModel[position].imageNew == "") {
+                imgProfile.setImageResource(R.drawable.profile_modern)
+            }
+            if(studentModel[position].imageOld == "") {
+                imgGradPic.setImageResource(R.drawable.profile_gradpic)
+            }
+            tvFirstName.text = studentModel[position].firstName
+            tvFirstName.text = studentModel[position].firstName
+            tvMiddleName.text = studentModel[position].middleName
+            tvLastName.text = studentModel[position].lastName
+            tvMaidenName.text = studentModel[position].maidenName
+//            tvMobile.text = studentModel[position].mobile
+            tvEmail.text = studentModel[position].email
+            tvFacebookURL2.text = studentModel[position].facebookURL
         return
 
 //            btnDelete.setOnClickListener() {
@@ -40,7 +44,7 @@ class StudentAdapter(val students: MutableList<Student>):RecyclerView.Adapter<St
 
     }
     override fun getItemCount(): Int {
-        return students.size
+        return studentModel.size
     }
 
 }

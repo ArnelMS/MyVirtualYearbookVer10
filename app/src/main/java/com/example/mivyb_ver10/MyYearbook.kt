@@ -17,6 +17,8 @@ class MyYearbook : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMyYearbookBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        view()
     }
 
     private fun view() {
@@ -24,71 +26,51 @@ class MyYearbook : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var students: ArrayList<Student> = ArrayList<Student>()
 
-                var dataFromDB = snapshot.children
+                var dataFromDb = snapshot.children
+//                Toast.makeText(applicationContext, ""+dataFromDb, Toast.LENGTH_SHORT).show()
 
-                for (data in dataFromDB) {
-
-                    // Get ID of Object from DB
+                for (data in dataFromDb) {
                     var id = data.key.toString()
-
-                    var imageNew = data.child("imageNew").value.toString()
+                    var imageProfile = data.child("imageNew").value.toString()
                     var imageOld = data.child("imageOld").value.toString()
                     var firstName = data.child("firstName").value.toString()
                     var middleName = data.child("middleName").value.toString()
-                    var lastName = data.child("lastName").value.toString()
                     var maidenName = data.child("maidenName").value.toString()
+                    var lastName = data.child("lastName").value.toString()
                     var mobile = data.child("mobile").value.toString()
                     var email = data.child("email").value.toString()
-                    var facebookURL = data.child("facebookURL").value.toString()
+                    var facebookUrl = data.child("facebookURL").value.toString()
 
                     var student = Student(
-                        1,
-                        2,
+                        imageProfile,
+                        imageOld,
                         firstName,
                         middleName,
                         lastName,
                         maidenName,
-                        0,
+                        mobile,
                         email,
-                        facebookURL
+                        facebookUrl
                     )
                     students.add(student)
-                }
-                var adapter = StudentAdapter(students)
 
+                }
+
+                val adapter = StudentAdapter(students)
                 binding.myRecycler.adapter = adapter
                 binding.myRecycler.layoutManager = LinearLayoutManager(applicationContext)
 
             }
 
             override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
             }
-        })
+        }
+        )
+    }private fun updateData(name : String, salary : String, id : String) {
+        var mapData = mutableMapOf<String,String>()
+        mapData["name"] = name
+        mapData["salary"] = salary
+        dao.update(id,mapData)
     }
 }
-
-//
-//    val studentList = mutableListOf<Student>(
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",1234568,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",974864513,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.dashboar_icon, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com"),
-//            Student(R.drawable.add_photo, R.drawable.dashboar_icon, "Arnel", "Mendoza","Sebastian","n/a",97486451341,"arenlsefsd@mail.com","www.facebook.com")
-//        )
-//        val adapter = StudentAdapter(studentList)
-//
-//        binding.myRecycler.adapter = adapter
-//        binding.myRecycler.layoutManager = LinearLayoutManager(this)
-//
-//    binding.btnRefresh.setOnClickListener(){
-//        view()
-//    }
-//
-//}
