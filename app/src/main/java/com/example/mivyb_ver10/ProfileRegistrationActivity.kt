@@ -33,8 +33,7 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnAddProfile.setOnClickListener() {
-            dao.add(
-                Student(
+            dao.add(Student(
                     1, 2,
                     "Arnel",
                     "Mendoza",
@@ -42,9 +41,7 @@ class ProfileRegistrationActivity : AppCompatActivity() {
                     "n/a",
                     123459,
                     "user1@email.com",
-                    "www.facebook.com.Arnel"
-                )
-            )
+                    "www.facebook.com.Arnel"))
             Toast.makeText(applicationContext, "Success!", Toast.LENGTH_SHORT).show()
         }
 
