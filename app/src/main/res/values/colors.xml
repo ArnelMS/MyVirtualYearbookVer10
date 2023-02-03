@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_red">#EF5F4B</color>
+    <color name="secondary">#46A69F</color>
+    <color name="tertiary">#3A5F6B</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+
+    // PRIMARY GROUP
+    <color name="mivyb_primary">#EF5F4B</color>
+    <color name="mivyb_secondary">#46A69F</color>
+    <color name="mivyb_tertiary">#FEA45A</color>
+    <color name="mivyb_background">#3A5F6B</color>
+    <color name="mivyb_activityBg">#FEFEFE</color>
+    <color name="mivyb_lightYellow">#EDBB88</color>
+    <color name="mivyb_Yellow">#FED052</color>
+    <color name="mivyb_text">#3A5F6B</color>
+    <color name="mivyb_icons">#34435F</color>
+    <color name="mivyb_dark">#374764</color>
+</resources>

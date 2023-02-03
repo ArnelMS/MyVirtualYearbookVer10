@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mivyb_background"
+    tools:context=".ProfileRegistrationActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:background="#230202"
+        android:backgroundTint="#351111"
+        android:foregroundTint="#BB0FEA"
+        android:shadowColor="#2A2E26"
+        android:text="update"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:iconTint="#AC2222"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAddProfile"
+        app:layout_constraintStart_toEndOf="@+id/btnAddProfile"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldFacebookUrl"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/mivyb_tertiary" />
+
+    <Button
+        android:id="@+id/btnDeleteProfile"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:background="#230202"
+        android:backgroundTint="#351111"
+        android:foregroundTint="#BB0FEA"
+        android:shadowColor="#2A2E26"
+        android:text="delete"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:iconTint="#AC2222"
+        app:layout_constraintStart_toEndOf="@+id/btnUpdate"
+        app:layout_constraintTop_toTopOf="@+id/btnUpdate"
+        app:rippleColor="@color/mivyb_tertiary" />
+
+    <Button
+        android:id="@+id/btnLoad"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:background="#230202"
+        android:backgroundTint="#351111"
+        android:foregroundTint="#BB0FEA"
+        android:shadowColor="#2A2E26"
+        android:text="LOAD"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:iconTint="#AC2222"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUpdate"
+        app:layout_constraintStart_toEndOf="@+id/btnDeleteProfile"
+        app:layout_constraintTop_toTopOf="@+id/btnDeleteProfile"
+        app:rippleColor="@color/mivyb_tertiary" />
+
+    <Button
+        android:id="@+id/btnAddProfile"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:background="#230202"
+        android:backgroundTint="#351111"
+        android:foregroundTint="#BB0FEA"
+        android:shadowColor="#2A2E26"
+        android:text="ADD"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        app:iconTint="#AC2222"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textFieldFacebookUrl"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldFacebookUrl"
+        app:layout_constraintVertical_bias="0.018"
+        app:rippleColor="@color/mivyb_tertiary" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/First_Name"
+        android:paddingStart="10dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgGradPic">
+        <!--        app:startIconDrawable="@drawable/profile_photo3"-->
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mivyb_activityBg"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldMiddleName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Middle_Name"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldFirstName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMiddleName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldLastName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Last_Name"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldMaidenName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etLastName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldMaidenName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Maiden_Name"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldMiddleName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMaidenName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldMobile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Mobile"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldLastName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:inputType="number"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldEmail"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Email"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldMobile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldFacebookUrl"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/Facebook_URL"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="#000000"
+        app:hintTextColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tvFacebookURL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:background="#FAFAFA"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvEditProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:text="UPDATE  / CREATE PROFILE"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgProfileNew"
+        android:layout_width="90dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile_modern"
+        app:layout_constraintStart_toEndOf="@+id/imgGradPic"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
+
+    <ImageView
+        android:id="@+id/imgGradPic"
+        android:layout_width="88dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="12dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/profile_gradpic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile" />
+
+    <ImageView
+        android:id="@+id/btnAddGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toEndOf="@+id/btnAddPhoto"
+        app:layout_constraintTop_toTopOf="@+id/btnAddPhoto"
+        app:srcCompat="@drawable/baseline_add_photo_alternate_24" />
+
+    <ImageView
+        android:id="@+id/btnAddPhoto"
+        android:layout_width="27dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toEndOf="@+id/imgProfileNew"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditProfile"
+        app:srcCompat="@drawable/add_photo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

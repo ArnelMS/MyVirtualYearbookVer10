@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "405094528010",
+    "project_id": "mivyb-5a12f",
+    "storage_bucket": "mivyb-5a12f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405094528010:android:2a9c21d7acb01093d89bf3",
+        "android_client_info": {
+          "package_name": "com.example.mivyb_ver10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405094528010-l4b9ojf2nuje4ssbneemm7g3ksp7feug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRmXcuBJj5As0avL3RhYb5OqydMItPck8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405094528010-l4b9ojf2nuje4ssbneemm7g3ksp7feug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
