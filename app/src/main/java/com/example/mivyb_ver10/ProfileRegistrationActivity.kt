@@ -13,9 +13,6 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.mivyb_ver10.databinding.ActivityProfileRegistrationBinding
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -33,8 +30,8 @@ class ProfileRegistrationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnAddProfile.setOnClickListener() {
-            val imageNew = binding.imgProfileNew.toString()
-            val imageOld = binding.imgGradPic.toString()
+            val imageNew = binding.imgProfileNew
+            val imageOld = binding.imgGradPic
             val firstName = binding.etFirstName.text.toString()
             val middleName = binding.etFirstName.text.toString()
             val lastName = binding.etFirstName.text.toString()
@@ -45,8 +42,8 @@ class ProfileRegistrationActivity : AppCompatActivity() {
 
             dao.add(
                 Student(
-                    imageNew.toInt(),
-                    imageOld.toInt(),
+                    imageNew,
+                    imageOld,
                     firstName,
                     middleName,
                     lastName,

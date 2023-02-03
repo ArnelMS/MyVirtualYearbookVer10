@@ -1,8 +1,10 @@
 package com.example.mivyb_ver10
 
+import android.widget.ImageView
+
 data class Student(
-    val imageNew: Int,
-    val imageOld: Int,
+    val imageNew: ImageView,
+    val imageOld: ImageView,
     val firstName: String,
     val middleName: String,
     val lastName: String,
